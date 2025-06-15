@@ -19,23 +19,40 @@ const AnalysisPage = () => {
     if (!initialAnalysisData) navigate('/');
   }, [initialAnalysisData, navigate]);
 
+  
+
   const handleRoleChange = async (e) => {
     const newRole = e.target.value;
     setSelectedRole(newRole);
+
+    
+    if (!initialAnalysisData || !initialAnalysisData.resume_data || !initialAnalysisData.resume_data.raw_text) {
+        console.error("Cannot re-score, initial resume data is missing.");
+        return; 
+    }
+
     if (newRole === 'General') {
       setCurrentScorecard(initialAnalysisData.scorecard);
       return;
     }
+
     setIsRescoring(true);
     try {
-      const response = await fetch('https://automated-resume-grader-backend.onrender.com/', {
+      const response = await fetch('https://automated-resume-grader-backend.onrender.com/rescore/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ resume_text: initialAnalysisData.resume_data.raw_text, role: newRole }),
+        body: JSON.stringify({
+          resume_text: initialAnalysisData.resume_data.raw_text, // This is now safe
+          role: newRole,
+        }),
       });
+      if (!response.ok) throw new Error("Re-scoring failed.");
       setCurrentScorecard(await response.json());
-    } catch (error) { console.error("Rescore failed:", error); } 
-    finally { setIsRescoring(false); }
+    } catch (error) {
+      console.error("Rescore failed:", error);
+    } finally {
+      setIsRescoring(false);
+    }
   };
 
   if (!initialAnalysisData || !currentScorecard) return null;

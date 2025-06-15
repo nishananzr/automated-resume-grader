@@ -4,16 +4,26 @@ const ResumeTailoring = ({ resumeText, jobDescription, setJobDescription }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [missingKeywords, setMissingKeywords] = useState(null);
 
+
   const handleGetInsights = async () => {
-    if (!jobDescription.trim()) return;
+
+    if (!jobDescription.trim() || !resumeText.trim()) {
+        console.error("Cannot get insights, resume text or job description is missing.");
+        return;
+    }
+    
     setIsLoading(true);
     setMissingKeywords(null);
     try {
-      const response = await fetch('https://automated-resume-grader-backend.onrender.com/', {
+      const response = await fetch('https://automated-resume-grader-backend.onrender.com/tailor-resume/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ resume_text: resumeText, job_description: jobDescription }),
+        body: JSON.stringify({
+          resume_text: resumeText, 
+          job_description: jobDescription
+        }),
       });
+      if (!response.ok) throw new Error("Keyword analysis failed.");
       const data = await response.json();
       setMissingKeywords(data.missing_keywords);
     } catch (error) {
