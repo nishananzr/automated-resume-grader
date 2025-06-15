@@ -8,4 +8,14 @@ python-docx
 pypdf  
 python-dotenv
 groq
-pyspellchecker 
+pyspellchecker
+fastapi
+uvicorn
+gunicorn
+spacy==3.7.2
+textblob
+python-docx
+PyMuPDF  # <-- THIS IS THE MISSING LINE
+python-dotenv
+groq
+pyspellchecker
