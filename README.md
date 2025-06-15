@@ -11,7 +11,7 @@ An intelligent resume analysis platform built for the **Masai School Anveshan Ha
     *   **[https://automated-resume-grader.vercel.app/](https://automated-resume-grader.vercel.app/)**
 
 *   **Project Presentation Video:**
-    *   **[Watch the 5-Minute Demo Here](https://your-youtube-or-google-drive-link)** *(<- IMPORTANT: Replace with your actual video link)*
+    *   **[Watch the 5-Minute Demo Here](https://your-youtube-or-google-drive-link)**
 
 *   **GitHub Repository:**
     *   **[https://github.com/nishananzr/automated-resume-grader](https://github.com/nishananzr/automated-resume-grader)**
