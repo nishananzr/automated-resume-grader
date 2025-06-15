@@ -1,0 +1,50 @@
+.create-page-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  padding: 2rem;
+  text-align: center;
+}
+
+.create-content-box {
+  max-width: 500px;
+  background-color: #fff;
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+}
+
+.rocket-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.create-content-box h1 {
+  font-size: 2.25rem;
+  color: #1a202c;
+  margin-bottom: 1rem;
+}
+
+.create-content-box p {
+  color: #4a5568;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.back-to-home-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #2dd4bf;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.back-to-home-button:hover {
+  background-color: #27bca8;
+  transform: translateY(-2px);
+}

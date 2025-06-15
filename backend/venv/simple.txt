@@ -1,0 +1,12 @@
+John Doe
+john.doe@email.com
+
+Experience
+- Managed a team of 5 engineers.
+- Launched a new product feature which increased user engagement by 20%.
+
+Skills
+- Python
+- React
+- Docker
+- SQL

@@ -1,0 +1,35 @@
+/* Import the professional "Inter" font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  /* This is the base color that the gradient will blend into */
+  background-color: #f7fbfb;
+  color: #1a202c;
+  margin: 0;
+  padding: 0;
+  /* Ensure the pseudo-element is positioned relative to the body */
+  position: relative;
+  overflow-x: hidden; /* Prevents horizontal scroll from the blobs */
+}
+
+/* This pseudo-element creates the entire gradient effect */
+body::before {
+  content: '';
+  position: fixed; /* Stays in place during scroll */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  /* The magic: Two radial gradients creating the color blobs */
+  background: 
+    radial-gradient(circle at 15% 25%, #d1fae5, transparent 40%), /* The Green Blob (top-left) */
+    radial-gradient(circle at 85% 65%, #cffafe, transparent 40%); /* The Light Blue Blob (bottom-right) */
+  
+  /* The blur effect to make the blobs soft and blend together */
+  filter: blur(120px);
+  
+  /* Place the gradient behind all other content */
+  z-index: -1;
+  opacity: 0.8;
+}
