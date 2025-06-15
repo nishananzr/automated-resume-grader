@@ -167,13 +167,15 @@ async def tailor_resume(request: TailoringRequest):
 
 @app.post("/ai-coach-feedback/")
 async def get_ai_coach_feedback(request: AICoachRequest):
-    # THIS IS THE KEY CHANGE: Initialize the client here
     api_key = os.getenv("GROQ_API_KEY")
+
     if not api_key:
-        raise HTTPException(500, "Groq API key is not configured on the server.")
+        print("❌ CRITICAL: GROQ_API_KEY was not found in the environment.")
+        raise HTTPException(status_code=500, detail="The AI Coach is not configured on the server.")
     
     try:
         groq_client = Groq(api_key=api_key)
+        
         chat_completion = groq_client.chat.completions.create(
             messages=[
                 {"role": "system", "content": "You are an expert career coach. Analyze the resume against the job description. Provide 3 sections in markdown: '**Strengths:**' (2-3 bullets), '**Areas for Improvement:**' (2-3 specific, actionable bullets), and '**Example Rewrite:**' (Pick one weak bullet point and rewrite it to be more impactful). Be encouraging but direct."},
@@ -184,7 +186,7 @@ async def get_ai_coach_feedback(request: AICoachRequest):
         return AICoachResponse(feedback=chat_completion.choices[0].message.content)
     except Exception as e:
         print(f"❌ GROQ API ERROR: {e}")
-        raise HTTPException(503, "The AI Coach service is experiencing issues. Please try again later.")
+        raise HTTPException(status_code=503, detail="The AI Coach service is experiencing issues. Please try again later.")
 
 @app.get("/history")
 async def get_history(): return ANALYSIS_HISTORY
