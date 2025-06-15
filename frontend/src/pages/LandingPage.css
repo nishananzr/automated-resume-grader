@@ -132,7 +132,7 @@
   transform: perspective(1500px) rotateY(0deg) rotateX(0deg); 
 }
 
-/* --- Features Section --- */
+
 .features-section {
   text-align: center;
   padding: 6rem 2rem;
@@ -182,7 +182,7 @@
   line-height: 1.6; 
 }
 
-/* --- "How It Works" Section Styling --- */
+
 .how-it-works-section {
     padding: 6rem 2rem;
     text-align: center;

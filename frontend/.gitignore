@@ -28,5 +28,4 @@ __pycache__/
 *.pyc
 venv/
 
-# Secrets - DO NOT UPLOAD
 .env

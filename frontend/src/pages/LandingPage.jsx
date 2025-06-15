@@ -26,7 +26,7 @@ const LandingPage = () => {
     formData.append('file', file);
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/upload-and-analyze/', {
+      const response = await fetch('https://automated-resume-grader-backend.onrender.com/', {
         method: 'POST',
         body: formData,
       });

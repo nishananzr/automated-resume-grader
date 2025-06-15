@@ -1,4 +1,4 @@
-/* ... (All previous styles for .analysis-container, .header, etc. are the same) ... */
+
 .analysis-container { background-color: #f7fafc; min-height: 100vh; }
 .analysis-header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background-color: #fff; border-bottom: 1px solid #e2e8f0; }
 .logo { font-weight: 700; font-size: 1.25rem; }
@@ -25,7 +25,7 @@
 .feedback-content { margin-top: 1.5rem; padding: 1.5rem; background-color: #f9fafb; border-radius: 8px; border: 1px solid #e2e8f0; line-height: 1.7; }
 .feedback-content h3 { margin-top: 0; } .feedback-content ul { padding-left: 20px; }
 
-/* ScoreSidebar styles */
+
 .score-sidebar { display: flex; flex-direction: column; gap: 1.5rem; }
 .main-score-card { background-color: #fff; border-radius: 12px; border: 1px solid #e2e8f0; padding: 2rem; text-align: center; }
 .main-score-title { margin: 0; font-weight: 500; color: #4a5568; }

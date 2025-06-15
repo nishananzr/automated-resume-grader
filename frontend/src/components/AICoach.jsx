@@ -8,7 +8,7 @@ const AICoach = ({ resumeText, jobDescription }) => {
     if (!jobDescription.trim()) { setError('Please paste a job description first.'); return; }
     setIsLoading(true); setFeedback(''); setError('');
     try {
-      const response = await fetch('http://127.0.0.1:8000/ai-coach-feedback/', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ resume_text: resumeText, job_description: jobDescription }), });
+      const response = await fetch('https://automated-resume-grader-backend.onrender.com/', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ resume_text: resumeText, job_description: jobDescription }), });
       if (!response.ok) throw new Error("The AI Coach is currently unavailable. Please try again later.");
       const data = await response.json(); setFeedback(data.feedback);
     } catch (err) { setError(err.message); } finally { setIsLoading(false); }

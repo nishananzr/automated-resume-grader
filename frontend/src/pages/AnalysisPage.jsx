@@ -28,7 +28,7 @@ const AnalysisPage = () => {
     }
     setIsRescoring(true);
     try {
-      const response = await fetch('http://127.0.0.1:8000/rescore/', {
+      const response = await fetch('https://automated-resume-grader-backend.onrender.com/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ resume_text: initialAnalysisData.resume_data.raw_text, role: newRole }),

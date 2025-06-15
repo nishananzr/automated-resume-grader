@@ -4,11 +4,11 @@ const FeedbackCard = ({ detail }) => {
     const scorePercentage = (detail.score / detail.max_score) * 100;
     let icon;
     if (scorePercentage > 80) {
-        icon = '✅'; // Green check
+        icon = '✅'; 
     } else if (scorePercentage > 50) {
-        icon = '⚠️'; // Yellow warning
+        icon = '⚠️'; 
     } else {
-        icon = '❌'; // Red X
+        icon = '❌'; 
     }
 
     return (

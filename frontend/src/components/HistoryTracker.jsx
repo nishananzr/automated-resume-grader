@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 const HistoryTracker = () => {
     const [history, setHistory] = useState([]);
-    useEffect(() => { fetch('http://127.0.0.1:8000/history').then(res => res.json()).then(data => setHistory(data)); }, []);
+    useEffect(() => { fetch('https://automated-resume-grader-backend.onrender.com/').then(res => res.json()).then(data => setHistory(data)); }, []);
     return (
         <div className="history-card">
             <h2>Recent Analyses</h2>

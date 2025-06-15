@@ -9,7 +9,7 @@ const ResumeTailoring = ({ resumeText, jobDescription, setJobDescription }) => {
     setIsLoading(true);
     setMissingKeywords(null);
     try {
-      const response = await fetch('http://127.0.0.1:8000/tailor-resume/', {
+      const response = await fetch('https://automated-resume-grader-backend.onrender.com/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ resume_text: resumeText, job_description: jobDescription }),

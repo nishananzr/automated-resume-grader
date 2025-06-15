@@ -1,4 +1,4 @@
-/* --- Global & Upload --- */
+
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   /* Enhancv's signature light mint-tinted background */
@@ -8,7 +8,7 @@ body {
   padding: 0;
 }
 
-/* Base button style */
+
 button {
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
@@ -29,7 +29,7 @@ button:disabled {
 
 .error-message { color: #dc3545; font-weight: bold; text-align: center; margin-top: 1rem; }
 
-/* --- Dashboard Styles (kept consistent) --- */
+
 .dashboard-container { max-width: 1200px; margin: 2rem auto; padding: 0 2rem; }
 .dashboard-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
 .reset-button { background-color: #6c757d; }
