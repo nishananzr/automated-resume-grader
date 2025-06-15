@@ -42,7 +42,7 @@ python-docx==1.1.2
 python-dotenv==1.1.0
 PyYAML==6.0.2
 pyspellchecker==0.8.1
-indexer==0.6.2  <-- ADD THIS LINE
+indexer==0.6.2 
 textblob==0.18.0.post0
 regex==2024.11.6
 requests==2.32.4
