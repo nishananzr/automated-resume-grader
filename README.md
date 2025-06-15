@@ -1,7 +1,5 @@
 # Resume Co-Pilot: An Automated-Resume-Grader
-
-![dashboard-preview](https://github.com/user-attachments/assets/8e1d446a-c02c-4ae1-b453-806b5ba0a62f)
-
+![Uploading dashboard-preview.png…]()
 
 An intelligent resume analysis platform built for the **Masai School Anveshan Hackathon 2025**. This tool provides job-seekers with instant, data-driven feedback to optimize their resumes, pass automated screeners, and land their next interview.
 
