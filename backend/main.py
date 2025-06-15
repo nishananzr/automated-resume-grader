@@ -2,8 +2,8 @@ import io
 import re
 import time
 import spacy
-import fitz  # PyMuPDF
-import docx  # python-docx
+import fitz  
+import docx  
 import os
 from groq import Groq
 from textblob import TextBlob
@@ -14,10 +14,9 @@ from pydantic import BaseModel, Field
 from typing import List, Optional
 from dotenv import load_dotenv
 
-# --- Load Environment Variables ---
 load_dotenv()
 
-# --- Pydantic Models (Data Structure Definitions) ---
+
 class ContactInfo(BaseModel): name: Optional[str]=None; email: Optional[str]=None; phone: Optional[str]=None
 class ScoreDetail(BaseModel): name: str; score: int; max_score: int; feedback: str
 class Scorecard(BaseModel): total_score: int; details: List[ScoreDetail]
@@ -29,7 +28,7 @@ class TailoringResponse(BaseModel): missing_keywords: List[str]
 class AICoachRequest(BaseModel): resume_text: str; job_description: str
 class AICoachResponse(BaseModel): feedback: str
 
-# --- Global Setup (Loads at Startup) ---
+
 print("--- Server starting... This is the final, verified version. ---")
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 groq_client = Groq(api_key=GROQ_API_KEY) if GROQ_API_KEY else None
@@ -44,7 +43,7 @@ SECTION_HEADERS = { "experience": ["experience", "work experience", "employment 
 ANALYSIS_HISTORY = []
 print("--- Server ready. ---")
 
-# --- FastAPI App Initialization ---
+
 app = FastAPI(title="Resume Co-Pilot API")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
 
