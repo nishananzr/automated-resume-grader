@@ -14,7 +14,7 @@ const LandingPage = () => {
     setError('');
   };
 
-  const handleUpload = async () => {
+    const handleUpload = async () => {
     if (!file) {
       setError("Please select a file first.");
       return;
@@ -26,18 +26,20 @@ const LandingPage = () => {
     formData.append('file', file);
 
     try {
-      const response = await fetch('https://automated-resume-grader-backend.onrender.com/', {
-        method: 'POST',
+      const response = await fetch('https://automated-resume-grader-backend.onrender.com/upload-and-analyze/', {
+        
+        method: 'POST', 
         body: formData,
+        
       });
 
       if (!response.ok) {
-        let errorDetail = response.statusText;
+        let errorDetail = response.statusText; 
         try {
             const errorData = await response.json();
             errorDetail = errorData.detail || errorDetail;
         } catch (e) {
-            // Ignore if error response is not JSON
+            
         }
         throw new Error(errorDetail);
       }
