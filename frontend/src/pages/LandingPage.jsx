@@ -26,12 +26,11 @@ const LandingPage = () => {
     formData.append('file', file);
 
     try {
-      const response = await fetch('https://automated-resume-grader-backend.onrender.com//upload-and-analyze/', {
-        
-        method: 'POST', 
-        body: formData,
-        
-      });
+      const response = await fetch('https://automated-resume-grader-backend.onrender.com/upload-and-analyze/', 
+        {
+          method: 'POST',
+          body: formData,
+        });
 
       if (!response.ok) {
         let errorDetail = response.statusText; 
