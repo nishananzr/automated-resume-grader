@@ -1,6 +1,6 @@
 # Resume Co-Pilot: An Automated-Resume-Grader
 
-![Resume Co-Pilot Screenshot](https://raw.githubusercontent.com/nishananzr/automated-resume-grader/main/dashboard-preview.png)
+![Dashboard Screenshot](dashboard.png)
 
 An intelligent resume analysis platform built for the **Masai School Anveshan Hackathon 2025**. This tool provides job-seekers with instant, data-driven feedback to optimize their resumes, pass automated screeners, and land their next interview.
 
@@ -78,10 +78,10 @@ To run this project on your local machine, please follow these steps.
 ```bash
 git clone https://github.com/nishananzr/automated-resume-grader.git
 cd automated-resume-grader
-Use code with caution.
-Markdown
-2. Set up the Backend:
-# Navigate to the backend directory
+```
+
+**2. Set up the Backend:**
+```# Navigate to the backend directory
 cd backend
 
 # Create and activate a virtual environment
@@ -103,10 +103,9 @@ echo "GROQ_API_KEY=gsk_your_grok_api_key_here" > .env
 
 # Run the backend server
 uvicorn main:app --reload
-Use code with caution.
-Bash
-The backend will be running at http://127.0.0.1:8000.
-3. Set up the Frontend:
+```
+**3. Set up the Frontend:**
+```
 # Open a new terminal and navigate to the frontend directory
 cd frontend
 
@@ -115,12 +114,5 @@ npm install
 
 # Run the frontend development server
 npm run dev
-Use code with caution.
-Bash
-The frontend will be accessible at http://localhost:5173.
-**Final Action:**
-1.  Replace the placeholder video link with your actual one.
-2.  I've added a placeholder image link using your GitHub repo. For this to work, make sure the `dashboard-preview.png` file is in the root of your project folder and has been pushed to GitHub.
-3.  Commit and push this final `README.md` to your repository.
+```
 
-Congratulations on completing the project
